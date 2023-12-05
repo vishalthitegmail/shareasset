@@ -1,0 +1,22 @@
+export const Link = (props: PromoProps): JSX.Element => {
+  if (props.fields) {
+    return (
+      <div className={`component promo ${props.params.styles}`}>
+        <div className="component-content">
+          <div className="promo-text">
+            <div>
+              <div className="field-promotext">
+                <JssRichText className="promo-text" field={props.fields.PromoText} />
+              </div>
+            </div>
+            <div className="field-promolink">
+              <JssLink field={props.fields.PromoLink} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return <PromoDefaultComponent {...props} />;
+};
